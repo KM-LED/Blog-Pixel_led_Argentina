@@ -409,8 +409,8 @@ footer {
     background: linear-gradient(135deg, rgba(0, 162, 255, 0.1) 0%, rgba(255, 0, 102, 0.1) 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 40px;
-    margin: 60px 0;
+    padding: 60px 40px;
+    margin: 100px 0;
     text-align: center;
     backdrop-filter: blur(10px);
 }
