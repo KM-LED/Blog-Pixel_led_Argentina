@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caída de Tensión: El enemigo del Pixel LED | Pixel Led Argentina</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="article-page">
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-text">KM-LED</span>
+                <span class="sub-logo">Pixel Led Argentina</span>
+            </div>
+            <div class="nav-actions">
+                <a href="https://www.tiendakmled.com.ar" target="_blank" class="btn btn-primary" style="padding: 8px 15px; font-size: 13px; margin-right: 10px;">Ver Tienda</a>
+                <a href="../index.html" class="btn btn-secondary" style="padding: 8px 15px; font-size: 13px;">Volver</a>
+            </div>
+        </nav>
+    </header>
+
+    <article class="container" style="padding-top: 150px; padding-bottom: 100px;">
+        <span class="article-tag">Energía</span>
+        <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 30px;">Caída de Tensión: Por qué tus LEDs se ven rojos</h1>
+        
+        <div class="article-body" style="font-size: 1.1rem; color: #ccc; line-height: 1.8;">
+            <p>¿Alguna vez notaste que al final de una tira larga de 5V, el color blanco se vuelve amarillento o naranja? Eso es la **caída de tensión**. Las pistas de cobre de las tiras son muy delgadas y ofrecen resistencia al paso de la corriente.</p>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">¿Cómo funciona?</h2>
+            <p>A medida que la corriente viaja por la tira, el voltaje disminuye. En tiras de 5V, esta caída es crítica: perder solo 1V significa que tus LEDs están funcionando a 4V, lo que no es suficiente para que el chip azul brille correctamente (de ahí que predomine el rojo).</p>
+
+            <h2 style="color: var(--accent-color); margin: 40px 0 20px;">La Solución: Inyección de Poder</h2>
+            <p>Consiste en llevar cables gruesos directamente desde la fuente a diferentes puntos de la tira. Esto garantiza que el voltaje sea constante en todo el recorrido.</p>
+            
+            <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+                <img src="../assets/images/inyeccion.png" alt="Esquema de Inyección de Poder" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+                <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">**Esquema de 3 hilos**: Se inyecta energía (+ / -) al inicio y al final, pero los DATOS solo se conectan al principio desde el controlador.</p>
+            </div>
+
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li>**Inyección al inicio y final**: Obligatorio para tramos de más de 5 metros en 5V.</li>
+                <li>**Inyección central**: Recomendada para proyectos de alta densidad de LEDs (144 leds/m).</li>
+            </ul>
+
+            <div style="background: rgba(0, 162, 255, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary-color);">
+                <strong>💡 Tip Pro:</strong> Usa cables de calibre (AWG) adecuado. Para 10 Amperios, un cable muy fino se calentará y también provocará caída de tensión antes de llegar a la tira.
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pixel Led Argentina - By KM-LED. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <a href="https://wa.me/5491149287539" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 32 32">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.587 2.137 8L0 32l8.275-2.087c2.35 1.288 5.012 1.963 7.725 1.963 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.3c-2.387 0-4.725-.612-6.787-1.775l-.487-.275-5.05 1.275 1.3-4.9-.3-.487c-1.275-2.012-1.937-4.35-1.937-6.762 0-7.337 5.975-13.312 13.312-13.312s13.312 5.975 13.312 13.312c0 7.337-5.975 13.312-13.312 13.312zM22.562 18.5c-.362-.187-2.137-1.05-2.475-1.175s-.575-.187-.825.187c-.237.362-.937 1.175-1.15 1.412s-.412.275-.775.087c-.362-.187-1.525-.562-2.912-1.8c-1.075-.962-1.8-2.15-2.012-2.512s-.025-.562.162-.737c.162-.162.362-.425.55-.637s.25-.362.375-.6c.125-.237.062-.437-.025-.612s-.825-2-1.137-2.737c-.3-.725-.612-.625-.825-.637s-.437-.012-.675-.012c-.237 0-.625.087-.95.437s-1.25 1.225-1.25 2.987 1.288 3.45 1.462 3.7c.187.237 2.537 3.875 6.137 5.437.862.375 1.525.6 2.05.775.862.275 1.637.237 2.25.15.687-.1 2.137-.875 2.437-1.725s.3-1.575.212-1.725c-.1-.137-.35-.225-.712-.412z"/>
+        </svg>
+    </a>
+</body>
+</html>

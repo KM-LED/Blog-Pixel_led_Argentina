@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es el Pixel LED? | Pixel Led Argentina</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="article-page">
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-text">KM-LED</span>
+                <span class="sub-logo">Pixel Led Argentina</span>
+            </div>
+            <div class="nav-actions">
+                <a href="https://www.tiendakmled.com.ar" target="_blank" class="btn btn-primary" style="padding: 8px 15px; font-size: 13px; margin-right: 10px;">Ver Tienda</a>
+                <a href="../index.html" class="btn btn-secondary" style="padding: 8px 15px; font-size: 13px;">Volver</a>
+            </div>
+        </nav>
+    </header>
+
+    <article class="container" style="padding-top: 150px; padding-bottom: 100px;">
+        <span class="article-tag">Iniciación</span>
+        <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 30px;">Fundamentos: ¿Qué es realmente un Pixel LED?</h1>
+        
+        <div class="article-body" style="font-size: 1.1rem; color: #ccc; line-height: 1.8;">
+            <p>Si estás acostumbrado a las tiras de LED RGB de toda la vida, el concepto de **Pixel LED** (o LED direccionable) va a cambiar tu forma de ver la iluminación. No es solo una tira que cambia de color; es una pantalla compuesta por cientos de pequeños puntos inteligentes.</p>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">LED Común (Analógico) vs. Pixel LED (Digital)</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px;">
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #fff; margin-bottom: 10px;">LED Analógico (RGB)</h3>
+                    <ul style="font-size: 0.9rem; list-style: none;">
+                        <li>❌ Toda la tira cambia al mismo color.</li>
+                        <li>❌ Controlado por variación de voltaje en 3 o 4 cables.</li>
+                        <li>❌ No requiere programación compleja.</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(0, 162, 255, 0.1); padding: 20px; border-radius: 10px; border: 1px solid var(--primary-color);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 10px;">Pixel LED (Digital)</h3>
+                    <ul style="font-size: 0.9rem; list-style: none;">
+                        <li>✅ Cada LED puede tener un color y brillo distinto.</li>
+                        <li>✅ Controlado por un microchip (IC) integrado.</li>
+                        <li>✅ Permite crear efectos de movimiento, textos y video.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">El Chip:</h2>
+            <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <p>La diferencia fundamental radica en que cada píxel tiene un pequeño circuito integrado (como el WS2812B o el WS2815). Este chip escucha una señal de datos digital y decide qué color mostrar. </p>
+                    <p style="margin-top: 20px;">Esto permite que con solo **un cable de datos**, puedas controlar miles de LEDs de forma independiente. Esto es lo que permite las animaciones complejas, fuegos artificiales, y efectos "flow" que vemos en las instalaciones modernas.</p>
+                </div>
+                <div style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                    <img src="../assets/images/ws2812b.png" alt="Macro del chip WS2812B" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+                    <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">Macro de un WS2812B: Se observa el cristal del chip integrado y los finos hilos de oro de conexión.</p>
+                </div>
+            </div>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">Diferentes formatos físicos</h2>
+            <p>Los píxeles LED no solo vienen en tiras. Dependiendo de tu proyecto (un cartel, una habitación, o un escenario), vas a elegir un formato distinto:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+                <!-- Tira LED Tradicional -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                    <img src="../assets/images/ws2812b.png" alt="Tira LED WS2812B" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Tiras Flexibles</h3>
+                    <p style="font-size: 0.9rem; color: #aaa;">El formato más común. Ideales para retroiluminación y perfiles de aluminio. Vienen con adhesivo 3M y se pueden cortar cada 1 o 3 LEDs.</p>
+                </div>
+
+                <!-- Pixel Tipo Bala -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                    <img src="../assets/images/pixel_bala.png" alt="Píxel Tipo Bala WS2811" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Tipo Bala (12mm)</h3>
+                    <p style="font-size: 0.9rem; color: #aaa;">Suelen ser WS2811. Son módulos individuales unidos por cables. Son **IP68 (sumergibles)** y se usan en cartelería (letras corpóreas) o decoración navideña.</p>
+                </div>
+            </div>
+
+            <h2 style="color: var(--primary-color); margin: 50px 0 20px;">La Guerra de los Voltajes: 5V, 12V y 24V</h2>
+            <p>Elegir el voltaje incorrecto es el error N°1 de los principiantes. Aquí te explicamos por qué ahora el 24V está ganando terreno:</p>
+
+            <div class="voltage-comparison" style="margin-top: 30px;">
+                <table style="width: 100%; border-collapse: collapse; background: rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden;">
+                    <thead style="background: rgba(255,255,255,0.05);">
+                        <tr>
+                            <th style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1);">Voltaje</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1);">Modelos Populares</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1);">Uso Recomendado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);"><span style="color: #ff4d4d; font-weight: bold;">5V</span></td>
+                            <td style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">WS2812B, SK6812</td>
+                            <td style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">Proyectos chicos, wearables, PC Gaming.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);"><span style="color: #4da6ff; font-weight: bold;">12V</span></td>
+                            <td style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">WS2811, WS2815</td>
+                            <td style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">Hogares, bares, tramos de hasta 5-10 metros.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px;"><span style="color: #4dff88; font-weight: bold;">24V</span></td>
+                            <td style="padding: 15px;">WS2811 (24V), WS2814</td>
+                            <td style="padding: 15px;">Fachadas, distancias largas (20m+).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h3 style="color: #fff; margin-bottom: 10px;">¿Por qué 24V ahora?</h3>
+                <p>A mayor voltaje, menor es la corriente necesaria para la misma potencia. Esto significa que podés tirar muchos más metros de tira sin que el final se vea naranja o débil (el famoso problema de la **caída de tensión**). Las nuevas tiras de 24V suelen controlar de a 6 LEDs por píxel, lo que las hace super estables para iluminación arquitectónica.</p>
+            </div>
+
+            <div style="background: rgba(255, 0, 102, 0.1); padding: 20px; border-radius: 10px; margin-top: 40px;">
+                <strong>Resumen rápido:</strong> Si quieres que toda tu habitación sea azul, usa LED común. Si quieres que la luz "corra" por la pared, haga ondas o reaccione a la música de forma localizada, necesitas **Pixel LED**.
+            </div>
+            <section class="cta-banner">
+                <h2>¿Necesitas equipamiento?</h2>
+                <p>En nuestra tienda oficial encontrarás **Controladores y amplificadores para pixel LED** y muchas cosas más para tus proyectos.</p>
+                <a href="https://www.tiendakmled.com.ar" target="_blank" class="btn btn-primary">Visitar Tienda KM-LED</a>
+            </section>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pixel Led Argentina - By KM-LED. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <a href="https://wa.me/5491149287539" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 32 32">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.587 2.137 8L0 32l8.275-2.087c2.35 1.288 5.012 1.963 7.725 1.963 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.3c-2.387 0-4.725-.612-6.787-1.775l-.487-.275-5.05 1.275 1.3-4.9-.3-.487c-1.275-2.012-1.937-4.35-1.937-6.762 0-7.337 5.975-13.312 13.312-13.312s13.312 5.975 13.312 13.312c0 7.337-5.975 13.312-13.312 13.312zM22.562 18.5c-.362-.187-2.137-1.05-2.475-1.175s-.575-.187-.825.187c-.237.362-.937 1.175-1.15 1.412s-.412.275-.775.087c-.362-.187-1.525-.562-2.912-1.8c-1.075-.962-1.8-2.15-2.012-2.512s-.025-.562.162-.737c.162-.162.362-.425.55-.637s.25-.362.375-.6c.125-.237.062-.437-.025-.612s-.825-2-1.137-2.737c-.3-.725-.612-.625-.825-.637s-.437-.012-.675-.012c-.237 0-.625.087-.95.437s-1.25 1.225-1.25 2.987 1.288 3.45 1.462 3.7c.187.237 2.537 3.875 6.137 5.437.862.375 1.525.6 2.05.775.862.275 1.637.237 2.25.15.687-.1 2.137-.875 2.437-1.725s.3-1.575.212-1.725c-.1-.137-.35-.225-.712-.412z"/>
+        </svg>
+    </a>
+</body>
+</html>

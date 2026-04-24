@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enciclopedia de Chips Pixel LED | Pixel Led Argentina</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="article-page">
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-text">KM-LED</span>
+                <span class="sub-logo">Pixel Led Argentina</span>
+            </div>
+            <div class="nav-actions">
+                <a href="https://www.tiendakmled.com.ar" target="_blank" class="btn btn-primary" style="padding: 8px 15px; font-size: 13px; margin-right: 10px;">Ver Tienda</a>
+                <a href="../index.html" class="btn btn-secondary" style="padding: 8px 15px; font-size: 13px;">Volver</a>
+            </div>
+        </nav>
+    </header>
+
+    <article class="container" style="padding-top: 150px; padding-bottom: 100px;">
+        <span class="article-tag">Guía Técnica</span>
+        <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 30px;">Enciclopedia de Chips: WS2811, WS2812B y más</h1>
+        
+        <div class="article-body" style="font-size: 1.1rem; color: #ccc;">
+            <p style="margin-bottom: 20px;">En el mundo de la iluminación direccionable, el "cerebro" detrás de cada LED es el chip controlador. Aunque a simple vista todos parecen iguales, la elección del chip determinará el voltaje de tu sistema, la redundancia de datos y la velocidad de refresco.</p>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">1. WS2811: Versatilidad en 12V y 5V</h2>
+            <p>El WS2811 es un chip externo extremadamente común. Aunque lo más habitual es verlo en tiras de 12V (donde controla 3 LEDs por chip), también existen versiones de **5V** que permiten el control individual de cada píxel, siendo una alternativa muy robusta al WS2812B.</p>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">2. WS2812B: El Rey del 5V</h2>
+            <p>Es el más popular. El controlador está integrado dentro del propio LED 5050. Permite control individual de cada pixel. Su gran contra es que al ser de 5V, sufre mucho la caída de tensión en tramos largos.</p>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">3. SK6812: Calidad y RGBW</h2>
+            <p>Físicamente idéntico al WS2812B pero con una ventaja: existe en versión **RGBW** (incluye un chip blanco puro). Es ideal para iluminación arquitectónica donde el blanco de mezcla del RGB no es suficiente.</p>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">4. WS2815: El Estándar de 12V con Redundancia</h2>
+            <p>Este es uno de los mejores chips disponibles en el mercado argentino. Funciona directamente a **12V**, lo que reduce drásticamente la caída de tensión. Su gran ventaja es el **doble canal de datos**: si un LED se daña físicamente, el pulso de datos salta al siguiente y el resto de la tira sigue funcionando normalmente.</p>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">5. WS2814: La Potencia del 24V y RGBW</h2>
+            <p>El WS2814 es un chip de última generación diseñado para trabajar a **24V**. Al igual que el SK6812, soporta **RGBW** (blanco dedicado), pero con la ventaja de poder manejar tramos larguísimos de tira sin inyección de corriente frecuente. Suele controlar los LEDs en grupos de 6, lo que lo hace ideal para iluminación arquitectónica de fachadas y techos.</p>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pixel Led Argentina - By KM-LED. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <a href="https://wa.me/5491149287539" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 32 32">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.587 2.137 8L0 32l8.275-2.087c2.35 1.288 5.012 1.963 7.725 1.963 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.3c-2.387 0-4.725-.612-6.787-1.775l-.487-.275-5.05 1.275 1.3-4.9-.3-.487c-1.275-2.012-1.937-4.35-1.937-6.762 0-7.337 5.975-13.312 13.312-13.312s13.312 5.975 13.312 13.312c0 7.337-5.975 13.312-13.312 13.312zM22.562 18.5c-.362-.187-2.137-1.05-2.475-1.175s-.575-.187-.825.187c-.237.362-.937 1.175-1.15 1.412s-.412.275-.775.087c-.362-.187-1.525-.562-2.912-1.8c-1.075-.962-1.8-2.15-2.012-2.512s-.025-.562.162-.737c.162-.162.362-.425.55-.637s.25-.362.375-.6c.125-.237.062-.437-.025-.612s-.825-2-1.137-2.737c-.3-.725-.612-.625-.825-.637s-.437-.012-.675-.012c-.237 0-.625.087-.95.437s-1.25 1.225-1.25 2.987 1.288 3.45 1.462 3.7c.187.237 2.537 3.875 6.137 5.437.862.375 1.525.6 2.05.775.862.275 1.637.237 2.25.15.687-.1 2.137-.875 2.437-1.725s.3-1.575.212-1.725c-.1-.137-.35-.225-.712-.412z"/>
+        </svg>
+    </a>
+</body>
+</html>

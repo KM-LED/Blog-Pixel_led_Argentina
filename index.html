@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Led Argentina | La guía definitiva de iluminación digital</title>
+    <meta name="description" content="Aprende todo sobre Pixel Led: chips (WS2812B, WS2811), controladores, cálculo de consumo, tensiones y soluciones a problemas comunes.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-text">KM-LED</span>
+                <span class="sub-logo">Pixel Led Argentina</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#articulos">Artículos</a></li>
+                <li><a href="#calculadora">Herramientas</a></li>
+                <li><a href="https://www.tiendakmled.com.ar" target="_blank" class="nav-store-link">Tienda</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content container">
+                <h1>Domina la tecnología <span class="gradient-text">Pixel LED</span></h1>
+                <p>Desde chips y controladores hasta inyección de potencia y troubleshooting. Todo lo que necesitas en un solo lugar.</p>
+                <div class="hero-actions">
+                    <a href="#articulos" class="btn btn-primary">Empezar a leer</a>
+                    <a href="#calculadora" class="btn btn-secondary">Calculadora de Consumo</a>
+                </div>
+            </div>
+            <div class="hero-bg-glow"></div>
+        </section>
+
+        <section id="articulos" class="container">
+            <h2 class="section-title">Publicaciones Recientes</h2>
+            <div class="articles-grid" id="articles-container">
+                <!-- Los artículos se cargarán aquí vía app.js -->
+            </div>
+        </section>
+
+        <section id="calculadora" class="container">
+            <div class="calculator-card">
+                <h2 class="section-title">Calculadora de Potencia</h2>
+                <p>Estima la fuente de alimentación necesaria para tu proyecto.</p>
+                
+                <div class="calc-grid">
+                    <div class="input-group">
+                        <label for="led-count">Cantidad de LEDs</label>
+                        <input type="number" id="led-count" value="150" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="led-type">Tipo de Chip</label>
+                        <select id="led-type">
+                            <option value="0.06">WS2812B (5V - 60mA max)</option>
+                            <option value="0.06">WS2811 (5V - 60mA max)</option>
+                            <option value="0.045">WS2811 (12V - 45mA max)</option>
+                            <option value="0.08">SK6812 RGBW (5V - 80mA max)</option>
+                            <option value="0.015">WS2815 (12V - 15mA max)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-box">
+                        <span class="label">Corriente Máxima</span>
+                        <span class="value" id="res-amps">0.00 A</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="label">Potencia necesaria</span>
+                        <span class="value" id="res-watts">0.00 W</span>
+                    </div>
+                    <div class="result-box highlighted">
+                        <span class="label">Fuente Recomendada</span>
+                        <span class="value" id="res-psu">5V - 10A</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="tienda" class="container" style="margin-top: 100px; margin-bottom: 50px;">
+            <div class="cta-banner" style="margin: 0; background: linear-gradient(135deg, rgba(0, 162, 255, 0.2) 0%, rgba(110, 64, 201, 0.2) 100%);">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Tienda Oficial KM-LED</h2>
+                <p style="font-size: 1.2rem; color: #fff; max-width: 700px; margin: 0 auto 30px;">
+                    En nuestra tienda oficial encontrarás **Controladores y amplificadores para pixel LED** y muchas cosas más para llevar tus proyectos al siguiente nivel.
+                </p>
+                <a href="https://www.tiendakmled.com.ar" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">Ir a la Tienda Ahora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pixel Led Argentina - By KM-LED. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5491149287539" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 32 32">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.587 2.137 8L0 32l8.275-2.087c2.35 1.288 5.012 1.963 7.725 1.963 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.3c-2.387 0-4.725-.612-6.787-1.775l-.487-.275-5.05 1.275 1.3-4.9-.3-.487c-1.275-2.012-1.937-4.35-1.937-6.762 0-7.337 5.975-13.312 13.312-13.312s13.312 5.975 13.312 13.312c0 7.337-5.975 13.312-13.312 13.312zM22.562 18.5c-.362-.187-2.137-1.05-2.475-1.175s-.575-.187-.825.187c-.237.362-.937 1.175-1.15 1.412s-.412.275-.775.087c-.362-.187-1.525-.562-2.912-1.8c-1.075-.962-1.8-2.15-2.012-2.512s-.025-.562.162-.737c.162-.162.362-.425.55-.637s.25-.362.375-.6c.125-.237.062-.437-.025-.612s-.825-2-1.137-2.737c-.3-.725-.612-.625-.825-.637s-.437-.012-.675-.012c-.237 0-.625.087-.95.437s-1.25 1.225-1.25 2.987 1.288 3.45 1.462 3.7c.187.237 2.537 3.875 6.137 5.437.862.375 1.525.6 2.05.775.862.275 1.637.237 2.25.15.687-.1 2.137-.875 2.437-1.725s.3-1.575.212-1.725c-.1-.137-.35-.225-.712-.412z"/>
+        </svg>
+    </a>
+
+    <script src="app.js"></script>
+</body>
+</html>
