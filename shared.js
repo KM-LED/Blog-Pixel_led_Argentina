@@ -26,6 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Logo fallback click
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+    }
+
     // Close lightbox on click
     lightbox.addEventListener('click', () => {
         lightbox.style.display = 'none';
