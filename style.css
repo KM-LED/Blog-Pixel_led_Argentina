@@ -418,3 +418,47 @@ footer {
     height: 35px;
     fill: white;
 }
+
+/* Lightbox for images */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10001;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox img {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 162, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.lightbox:hover img {
+    transform: scale(1.02);
+}
+
+.article-body img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-body img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 162, 255, 0.2);
+}
