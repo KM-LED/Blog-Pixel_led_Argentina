@@ -89,6 +89,20 @@ nav {
     color: var(--primary-color);
 }
 
+/* Article Pages Specific */
+.article-page article h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 25px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.article-page article h2 {
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+}
+
 /* Hero Section */
 #hero {
     padding-top: calc(var(--header-height) + 100px);
@@ -97,9 +111,20 @@ nav {
     text-align: center;
 }
 
+.article-page article {
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+
+.article-body {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.8;
+}
+
 .hero-content h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2rem, 6vw, 3.5rem);
     margin-bottom: 20px;
     line-height: 1.1;
 }

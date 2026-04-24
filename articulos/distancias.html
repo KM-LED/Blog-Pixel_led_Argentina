@@ -21,14 +21,14 @@
         </nav>
     </header>
 
-    <article class="container" style="padding-top: 150px; padding-bottom: 100px;">
+    <article class="container">
         <span class="article-tag">Señal y Datos</span>
-        <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 30px;">Distancias y Amplificadores: Mantén tu señal limpia</h1>
+        <h1>Señal y Datos: Cómo llegar lejos</h1>
         
-        <div class="article-body" style="font-size: 1.1rem; color: #ccc; line-height: 1.8;">
+        <div class="article-body">
             <p>A diferencia de la potencia, la señal de datos del Pixel LED (Protocolo TTL) es muy frágil. Si el cable entre el controlador y el primer LED es muy largo, empezarás a ver parpadeos aleatorios o "glitches" de colores.</p>
 
-            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">El Problema de los 3.3V vs 5V</h2>
+            <h2>El Problema de los 3.3V vs 5V</h2>
             <p>Muchos controladores modernos (como el ESP32) emiten señal a **3.3V**, pero los chips Pixel esperan **5V**. Aunque en distancias cortas (menos de 50cm) esto suele funcionar, a medida que el cable se alarga, la señal se degrada hasta volverse ilegible.</p>
 
             <h2 style="color: var(--primary-color); margin: 40px 0 20px;">Acondicionamiento de Señal (Data Conditioning)</h2>
