@@ -552,3 +552,111 @@ footer {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+/* Equipment Section */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.equip-card {
+    background: var(--surface-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.equip-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.equip-card.featured {
+    background: linear-gradient(145deg, rgba(0, 162, 255, 0.1), rgba(255, 0, 102, 0.05));
+    border: 1px solid rgba(0, 162, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.equip-card.featured::before {
+    content: 'RECOMENDADO';
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+}
+
+.equip-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.equip-list {
+    list-style: none;
+}
+
+.equip-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+    color: #ccc;
+}
+
+.equip-list li svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+}
+
+.provider-list {
+    margin-top: 20px;
+}
+
+.provider-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.provider-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.provider-name {
+    font-weight: 600;
+    color: #fff;
+}
+
+.provider-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+}
