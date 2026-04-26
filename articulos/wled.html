@@ -228,6 +228,32 @@
                 <p style="font-size: 0.9rem;">**Nota:** No necesitas instalar ningún Skill de Alexa ni crear cuentas externas. La comunicación es local y directa entre tu ESP32 y el dispositivo Echo.</p>
             </div>
 
+            <h2 style="color: var(--primary-color); margin: 50px 0 20px;">El Botón Físico: Control Manual</h2>
+            <p>No siempre tenemos el celular a mano. WLED permite conectar un botón físico (Push Button) para controlar tu tira de forma manual y rápida.</p>
+
+            <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 30px 0;">
+                <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">Cómo conectarlo y usarlo:</h3>
+                <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
+                    <li style="margin-bottom: 15px; display: flex; gap: 12px; align-items: flex-start;">
+                        <span style="color: var(--primary-color); font-weight: bold; min-width: 90px;">🔌 Conexión:</span> 
+                        <span>Conecta un pulsador entre un pin **GPIO** (normalmente el GPIO 0 o el GPIO 2) y **GND**.</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; gap: 12px; align-items: flex-start;">
+                        <span style="color: var(--primary-color); font-weight: bold; min-width: 90px;">🖱️ Acciones:</span> 
+                        <span>
+                            - **Click simple:** Enciende/Apaga.<br>
+                            - **Doble click:** Cambia al siguiente Preset.<br>
+                            - **Click largo:** Sube/Baja el brillo.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(0, 162, 255, 0.05); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary-color); margin-bottom: 40px;">
+                <p style="font-size: 0.9rem;">**Tip Pro:** Puedes configurar qué hace cada pulsación en **Config > LED Preferences > Button Setup**. ¡Incluso puedes usarlo para disparar una Playlist entera!</p>
+            </div>
+
+
             <h2 style="color: var(--accent-color); margin: 50px 0 20px;">Infraestructura WiFi: Consejos Pro</h2>
             <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
                 <h3 style="color: #fff; margin-bottom: 15px;">🚀 Logra una conexión infalible</h3>
