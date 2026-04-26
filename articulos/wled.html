@@ -211,9 +211,22 @@
                         <span>**Control Centralizado:** Podrás controlar el brillo, los colores y los presets de todos tus WLEDs desde un solo panel junto al resto de tus luces y electrodomésticos.</span>
                     </li>
                 </ul>
+            </div>            <h2 style="color: var(--accent-color); margin: 50px 0 20px;">Control por Voz: WLED y Alexa</h2>
+            <p>¿Quieres decirle a tu casa que encienda las luces? WLED incluye una función de **emulación** que permite que Alexa lo reconozca como si fuera una lámpara inteligente de Philips Hue o Belkin Wemo.</p>
+
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 30px 0;">
+                <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">Cómo configurarlo rápido:</h3>
+                <ol style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Entra a **Config > Sync Interfaces**.</li>
+                    <li style="margin-bottom: 10px;">Busca la sección **Alexa** y marca la casilla "Emulate Alexa device".</li>
+                    <li style="margin-bottom: 10px;">Ponle un nombre (ej: "Tira Led"). Este será el nombre que usarás para hablarle a Alexa.</li>
+                    <li>Dile a tu parlante: *"Alexa, busca dispositivos"* o búscalo manualmente desde la App de Alexa.</li>
+                </ol>
             </div>
 
-
+            <div style="background: rgba(255, 165, 0, 0.05); padding: 20px; border-radius: 10px; border-left: 4px solid #ffa500; margin-bottom: 40px;">
+                <p style="font-size: 0.9rem;">**Nota:** No necesitas instalar ningún Skill de Alexa ni crear cuentas externas. La comunicación es local y directa entre tu ESP32 y el dispositivo Echo.</p>
+            </div>
 
             <h2 style="color: var(--accent-color); margin: 50px 0 20px;">Infraestructura WiFi: Consejos Pro</h2>
             <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
