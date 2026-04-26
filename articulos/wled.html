@@ -52,7 +52,7 @@
                     <p style="font-size: 0.9rem; margin-bottom: 10px;">Al configurar WLED en <em>Config > LED Preferences</em>, utiliza estos pines exactos para que tus salidas funcionen correctamente:</p>
                     <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
                         <li style="margin-bottom: 8px;">⚡ <strong>Controlador de 2 Salidas:</strong> Asigna los canales a <strong>GPIO 2</strong> y <strong>GPIO 4</strong>.</li>
-                        <li>⚡ <strong>Controlador de 4 Salidas:</strong> Asigna los canales a <strong>GPIO 2</strong>, <strong>GPIO 4</strong>, <strong>GPIO 18</strong> y <strong>GPIO 19</strong>.</li>
+                        <li>⚡ <strong>Controlador de 4 Salidas:</strong> Asigna los canales a <strong>GPIO 2</strong>, <strong>GPIO 4</strong>, <strong>GPIO 18</strong> y <strong>GPIO 19</strong>. El botón físico se configura en el <strong>GPIO 23</strong>.</li>
                     </ul>
                 </div>
             </div>
@@ -244,7 +244,7 @@
                 <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
                     <li style="margin-bottom: 15px; display: flex; gap: 12px; align-items: flex-start;">
                         <span style="color: var(--primary-color); font-weight: bold; min-width: 90px;">🔌 Conexión:</span> 
-                        <span>Conecta un pulsador entre un pin **GPIO** (normalmente el GPIO 0 o el GPIO 2) y **GND**.</span>
+                        <span>Conecta un pulsador entre un pin **GPIO** (normalmente el GPIO 0 o el GPIO 2) y **GND**. *(Nota: Si usas el controlador KM-LED de 4 salidas, el pin correcto es el **GPIO 23**)*.</span>
                     </li>
                     <li style="margin-bottom: 15px; display: flex; gap: 12px; align-items: flex-start;">
                         <span style="color: var(--primary-color); font-weight: bold; min-width: 90px;">🖱️ Acciones:</span> 
