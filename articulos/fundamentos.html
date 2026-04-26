@@ -79,6 +79,40 @@
                 </div>
             </div>
 
+            <h2 style="color: var(--primary-color); margin: 50px 0 20px;">Casos de uso: ¿Qué chip elegir?</h2>
+            <p>No siempre el "mejor" chip es el más caro. Todo depende de lo que quieras armar:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
+                <!-- Caso Pantallas -->
+                <div style="background: linear-gradient(145deg, rgba(0, 162, 255, 0.05), rgba(0, 0, 0, 0.2)); padding: 25px; border-radius: 15px; border: 1px solid rgba(0, 162, 255, 0.2); position: relative; overflow: hidden;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <span style="background: var(--primary-color); color: #000; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem;">01</span>
+                        Pantallas y Matrices
+                    </h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">Para efectos de <b>video, texto o logos</b>, necesitas el máximo detalle. Aquí se usan chips como el <b>WS2812B (5V)</b> o <b>WS2815 (12V)</b>.</p>
+                    <ul style="margin-top: 15px; font-size: 0.85rem; color: #ccc; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;">✅ <b>Control Individual:</b> Cada LED es un píxel independiente.</li>
+                        <li style="margin-bottom: 8px;">✅ <b>Alta Densidad:</b> Permite poner muchos LEDs juntos para mayor resolución.</li>
+                        <li>⚠️ <b>Dato:</b> El WS2815 es mejor para pantallas grandes porque si un LED falla, el resto sigue funcionando.</li>
+                    </ul>
+                </div>
+
+                <!-- Caso Tubos -->
+                <div style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.2)); padding: 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); position: relative; overflow: hidden;">
+                    <h3 style="color: #fff; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <span style="background: #fff; color: #000; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem;">02</span>
+                        Tubos y Perfiles
+                    </h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">Si vas a armar <b>tubos de luz para escenarios o boliches</b>, lo mejor es el <b>WS2811 (12V)</b>.</p>
+                    <ul style="margin-top: 15px; font-size: 0.85rem; color: #ccc; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;">✅ <b>Control por Grupos:</b> Un chip controla 3 LEDs. Esto simplifica el cableado y la programación.</li>
+                        <li style="margin-bottom: 8px;">✅ <b>Eficiencia:</b> Ahorras canales de datos en el controlador, permitiendo conectar más metros por salida.</li>
+                        <li>✅ <b>Costo:</b> Es la opción más económica para tramos largos.</li>
+                    </ul>
+                </div>
+            </div>
+
+
             <h2 style="color: var(--primary-color); margin: 50px 0 20px;">La Guerra de los Voltajes: 5V, 12V y 24V</h2>
             <p>Elegir el voltaje incorrecto es el error N°1 de los principiantes. Aquí te explicamos por qué ahora el 24V está ganando terreno:</p>
 
