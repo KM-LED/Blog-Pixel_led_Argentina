@@ -83,6 +83,24 @@
                 </ul>
             </div>
 
+            <h2 style="color: var(--accent-color); margin: 40px 0 20px;">7. Mezclar voltajes: El error fatal</h2>
+            <p>Parece obvio, pero es la causa #1 de equipos quemados en el taller. Las fuentes y las tiras **deben coincidir siempre** en voltaje.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 25px 0;">
+                <div style="background: rgba(255, 0, 0, 0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 0, 0, 0.3);">
+                    <h4 style="color: #ff4d4d; margin-bottom: 10px;">🔥 5V en 12V / 24V</h4>
+                    <p style="font-size: 0.9rem;">Si conectas una tira de 5V a una fuente de 12V o 24V, los chips **explotarán o se quemarán instantáneamente**. No hay vuelta atrás.</p>
+                </div>
+                <div style="background: rgba(255, 165, 0, 0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 165, 0, 0.3);">
+                    <h4 style="color: #ffa500; margin-bottom: 10px;">📉 12V / 24V en 5V</h4>
+                    <p style="font-size: 0.9rem;">Si conectas una tira de 12V o 24V a una fuente de 5V, los LEDs **no encenderán** o se verán extremadamente tenues y con colores erróneos. No se queman, pero no funcionan.</p>
+                </div>
+                <div style="background: rgba(255, 0, 0, 0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 0, 0, 0.3);">
+                    <h4 style="color: #ff4d4d; margin-bottom: 10px;">🔥 12V en 24V</h4>
+                    <p style="font-size: 0.9rem;">Mismo resultado que con los de 5V: la sobretensión **destruye los reguladores internos** de los chips WS2811/WS2815 rápidamente.</p>
+                </div>
+            </div>
+
             <div style="border: 2px dashed var(--accent-color); padding: 25px; border-radius: 15px; margin-top: 50px; background: rgba(255,0,102,0.05);">
                 <h3 style="color: var(--accent-color); margin-bottom: 10px;">⚠️ Regla de Oro del Instalador</h3>
                 <p>NUNCA conectes o desconectes una tira bajo tensión (Hot-plugging). Un pico de voltaje al conectar el pin de datos antes que el de tierra puede quemar el microchip del primer LED instantáneamente.</p>
