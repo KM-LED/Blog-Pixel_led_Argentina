@@ -174,6 +174,26 @@
                 <li>**Desventaja**: El costo elevado y la necesidad de tirar cableado estructurado hasta cada controlador.</li>
             </ul>
 
+            <h2 style="color: var(--primary-color); margin: 50px 0 20px;">Protocolos de Red: Art-Net y sACN (E1.31)</h2>
+            <p>Cuando pasamos del control por WiFi a instalaciones profesionales con miles de píxeles, dejamos de usar la "interfaz web" y pasamos a usar protocolos de datos en tiempo real.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0;">
+                <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <h3 style="color: var(--accent-color); margin-bottom: 15px; font-size: 1.2rem;">Art-Net</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.5;">Es el protocolo más universal. Permite enviar universos DMX a través de redes estándar. Casi cualquier software de iluminación profesional como **Resolume, Madrix u Onyx** lo soporta nativamente.</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.2rem;">sACN (E1.31)</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.5;">Es el estándar moderno de la industria. Su gran ventaja es que usa "Multicast", lo que lo hace mucho más eficiente en instalaciones gigantes, evitando que el router se sature con datos innecesarios.</p>
+                </div>
+            </div>
+
+            <div style="background: rgba(0, 162, 255, 0.05); padding: 25px; border-radius: 15px; border-left: 5px solid var(--primary-color); margin: 30px 0;">
+                <h4 style="color: #fff; margin-bottom: 10px;">¿WLED los soporta?</h4>
+                <p style="font-size: 0.95rem;">**¡Totalmente!** WLED puede recibir datos por ambos protocolos. Esto te permite usar un simple ESP32 como un nodo DMX inalámbrico para mapear tus LEDs desde programas profesionales como **xLights** o **Resolume Arena**.</p>
+            </div>
+
+
             <h2 style="color: var(--accent-color); margin: 50px 0 20px;">Infraestructura WiFi: Consejos Pro</h2>
             <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
                 <h3 style="color: #fff; margin-bottom: 15px;">🚀 Logra una conexión infalible</h3>
