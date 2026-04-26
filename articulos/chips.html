@@ -40,6 +40,11 @@
             <h2 style="color: var(--primary-color); margin: 40px 0 20px;">4. WS2815: El Estándar de 12V con Redundancia</h2>
             <p>Este es uno de los mejores chips disponibles en el mercado argentino. Funciona directamente a **12V**, lo que reduce drásticamente la caída de tensión. Su gran ventaja es el **doble canal de datos**: si un LED se daña físicamente, el pulso de datos salta al siguiente y el resto de la tira sigue funcionando normalmente.</p>
 
+            <div style="background: rgba(255, 0, 102, 0.05); border-left: 4px solid var(--accent-color); padding: 20px; border-radius: 0 15px 15px 0; margin-top: 20px;">
+                <h4 style="color: var(--accent-color); margin-bottom: 10px;">💡 Tip de Conexión (Backup Data):</h4>
+                <p style="font-size: 0.95rem;">En el **primer LED** de la tira, verás dos entradas de datos: **DI** (Data In) y **BI** (Backup In). Para que el sistema funcione correctamente y evitar ruidos, debes conectar el cable de datos de tu controlador al pin **DI**, y el pin **BI** debe ir conectado directamente a **GND** (Tierra). A partir de ahí, la tira gestiona la redundancia sola.</p>
+            </div>
+
             <h2 style="color: var(--primary-color); margin: 40px 0 20px;">5. WS2814: La Potencia del 24V y RGBW</h2>
             <p>El WS2814 es un chip de última generación diseñado para trabajar a **24V**. Al igual que el SK6812, soporta **RGBW** (blanco dedicado), pero con la ventaja de poder manejar tramos larguísimos de tira sin inyección de corriente frecuente. Suele controlar los LEDs en grupos de 6, lo que lo hace ideal para iluminación arquitectónica de fachadas y techos.</p>
         </div>
