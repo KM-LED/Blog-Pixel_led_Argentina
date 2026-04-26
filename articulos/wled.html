@@ -94,6 +94,42 @@
             </ul>
             <p>Se configura en **Config > WiFi Setup > Static IP**. Asegúrate de elegir una IP que esté fuera del rango que el router asigna automáticamente para evitar conflictos.</p>
 
+            <h2 style="color: var(--primary-color); margin: 50px 0 20px;">Dominando la Interfaz: Segmentos, Presets y Playlists</h2>
+            <p>WLED no es solo encender y apagar. La verdadera potencia está en cómo organizas tus LEDs para crear escenas complejas.</p>
+
+            <div class="wled-features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0;">
+                <!-- Segmentos -->
+                <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 1.2rem;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM3 12h18"></path></svg>
+                        Segmentos
+                    </h3>
+                    <p style="font-size: 0.9rem; line-height: 1.5;">Imagina que tienes una tira de 300 LEDs. Con **Segmentos**, puedes decirle a WLED que los LEDs 0 al 100 son "Segmento 0" y los 101 al 300 son "Segmento 1".</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-muted);">**¿Para qué sirve?** Puedes poner un efecto de fuego en una parte y un color fijo en otra, ¡todo con el mismo controlador!</p>
+                </div>
+
+                <!-- Presets -->
+                <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: var(--accent-color); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 1.2rem;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                        Presets
+                    </h3>
+                    <p style="font-size: 0.9rem; line-height: 1.5;">Un **Preset** es una "foto" de cómo están tus LEDs en ese momento. Guarda los colores, la velocidad, el brillo y hasta la división de segmentos.</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-muted);">**Tip:** Crea un preset llamado "Cine" con brillo bajo y otro "Fiesta" con efectos rápidos para cambiarlos con un solo click.</p>
+                </div>
+
+                <!-- Playlists -->
+                <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: #4dff88; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 1.2rem;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                        Playlists
+                    </h3>
+                    <p style="font-size: 0.9rem; line-height: 1.5;">Las **Playlists** te permiten encadenar presets. Puedes decir: "Ejecuta el Preset 1 por 10 segundos, luego el Preset 2 por 30 segundos, y repite".</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-muted);">**Uso Pro:** Ideal para vidrieras o decoración navideña donde quieres que los efectos cambien solos automáticamente.</p>
+                </div>
+            </div>
+
+
             <h2 style="color: var(--accent-color); margin: 50px 0 20px;">Controladores Ethernet (RJ45): Estabilidad Pro</h2>
             <p>Para instalaciones grandes o profesionales (como salones de eventos o fachadas), el WiFi puede quedarse corto. Aquí es donde entran los controladores con puerto **RJ45 (Ethernet)**.</p>
             
