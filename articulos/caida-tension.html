@@ -47,6 +47,28 @@
             <div style="background: rgba(0, 162, 255, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary-color);">
                 <strong>💡 Tip Pro:</strong> Usa cables de calibre (AWG) adecuado. Para 10 Amperios, un cable muy fino se calentará y también provocará caída de tensión antes de llegar a la tira.
             </div>
+
+            <h2 style="color: var(--primary-color); margin: 40px 0 20px;">Múltiples Fuentes: El Secreto de la Tierra Común</h2>
+            <p>En proyectos grandes (como una fachada o un escenario), es normal usar más de una fuente de alimentación. Aquí es donde muchos cometen el error que quema controladores.</p>
+
+            <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); margin-top: 20px;">
+                <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">Reglas de Oro del Multifuente:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px; display: flex; gap: 12px; align-items: flex-start;">
+                        <span style="color: #ff4d4d; font-weight: bold; min-width: 70px;">❌ NUNCA:</span> 
+                        <span>Unas los positivos (+V) de dos fuentes distintas. Esto puede causar que una fuente intente "cargar" a la otra y terminen quemándose.</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; gap: 12px; align-items: flex-start;">
+                        <span style="color: #4dff88; font-weight: bold; min-width: 70px;">✅ SIEMPRE:</span> 
+                        <span>Une los negativos (GND) de todas las fuentes y del controlador. Esto crea una <b>Tierra Común</b>, necesaria para que la señal de datos tenga una referencia estable.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 30px; background: rgba(255, 153, 0, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #ff9900;">
+                <p style="font-size: 0.95rem;"><b>Ejemplo práctico:</b> Si la Fuente A alimenta al controlador y los primeros 5 metros, y la Fuente B alimenta los siguientes 5 metros, debes conectar el cable de datos de forma continua, pero interrumpir el cable positivo entre el metro 5 y 6. El cable negativo (GND) debe recorrer toda la tira sin interrupciones uniendo ambas fuentes.</p>
+            </div>
+
         </div>
     </article>
 
