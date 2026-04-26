@@ -28,9 +28,12 @@
         <div class="article-body">
             <p>Trabajar con Pixel LED es apasionante, pero a veces frustrante. Aquí tienes las soluciones a los fallos más comunes que todo instalador enfrenta.</p>
 
-            <h2 style="color: var(--accent-color); margin: 40px 0 20px;">1. El primer LED funciona, los demás no</h2>
-            <p>Este es el clásico error de dirección. Las tiras de Pixel LED tienen una **dirección de flujo obligatoria**. Busca las flechas en la tira impresas en el PCB; los datos deben entrar por el lado de la flecha que apunta hacia adelante (DI - Data In).</p>
-            <p>Si la dirección es correcta, es muy probable que el primer LED esté dañado. Cámbialo o córtalo y suelda el siguiente.</p>
+            <h2 style="color: var(--accent-color); margin: 40px 0 20px;">1. El primer LED no funciona (y nada más tampoco)</h2>
+            <p>Este es el fallo más común y puede deberse a dos motivos:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li>**Dirección de Datos Inversa:** Busca las flechas en la tira. Los datos deben entrar por el lado que dice **DI (Data In)**. Si conectaste el controlador al lado **DO (Data Out)**, nada va a encender.</li>
+                <li>**Primer LED Quemado:** El primer LED es el que recibe todo el castigo de los picos de tensión. Si este muere, actúa como un fusible abierto y no deja pasar señal al resto.</li>
+            </ul>
 
             <h2 style="color: var(--primary-color); margin: 40px 0 20px;">2. Parpadeos aleatorios (Glitches)</h2>
             <p>Si los LEDs muestran colores como locos o parpadean sin sentido, el problema es casi siempre la **señal de datos** degradada:</p>
@@ -60,10 +63,31 @@
                 </div>
             </div>
 
+            <h2 style="color: var(--accent-color); margin: 40px 0 20px;">6. ¿Por qué la tira se corta a la mitad?</h2>
+            <p>Si la tira funciona bien hasta cierto punto y luego se apaga o queda en un color fijo, un LED está dañado y actúa como un "muro" para la señal.</p>
+            <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); margin-top: 20px;">
+                <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">Diferencias según el Chip:</h3>
+                <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
+                    <li style="margin-bottom: 15px; display: flex; gap: 15px;">
+                        <span style="color: var(--primary-color); font-weight: bold; min-width: 100px;">WS2812B:</span> 
+                        <span>Al tener el IC integrado en cada LED, si uno falla, <b>se corta toda la tira</b> hacia adelante inmediatamente.</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; gap: 15px;">
+                        <span style="color: var(--primary-color); font-weight: bold; min-width: 100px;">WS2811:</span> 
+                        <span>En 12V, un chip controla 3 LEDs. Si ese chip se daña, verás que <b>un grupo de 3 LEDs</b> se apaga y el resto de la tira también queda sin señal.</span>
+                    </li>
+                    <li style="display: flex; gap: 15px;">
+                        <span style="color: var(--accent-color); font-weight: bold; min-width: 100px;">WS2815:</span> 
+                        <span>¡Es la excepción! Tiene un cable de <b>Backup Data</b>. Si un LED se quema, la señal "salta" ese LED y el resto de la tira sigue funcionando normalmente.</span>
+                    </li>
+                </ul>
+            </div>
+
             <div style="border: 2px dashed var(--accent-color); padding: 25px; border-radius: 15px; margin-top: 50px; background: rgba(255,0,102,0.05);">
                 <h3 style="color: var(--accent-color); margin-bottom: 10px;">⚠️ Regla de Oro del Instalador</h3>
                 <p>NUNCA conectes o desconectes una tira bajo tensión (Hot-plugging). Un pico de voltaje al conectar el pin de datos antes que el de tierra puede quemar el microchip del primer LED instantáneamente.</p>
             </div>
+
         </div>
     </article>
 
