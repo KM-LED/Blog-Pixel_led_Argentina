@@ -127,10 +127,32 @@
                     <p style="font-size: 0.9rem; line-height: 1.5;">Las **Playlists** te permiten encadenar presets. Puedes decir: "Ejecuta el Preset 1 por 10 segundos, luego el Preset 2 por 30 segundos, y repite".</p>
                     <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-muted);">**Uso Pro:** Ideal para vidrieras o decoración navideña donde quieres que los efectos cambien solos automáticamente.</p>
                 </div>
+            <div style="background: rgba(0, 162, 255, 0.05); border: 1px solid rgba(0, 162, 255, 0.2); padding: 30px; border-radius: 20px; margin-top: 20px;">
+                <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.3rem;">🛠️ Paso a Paso: Configurando tus Segmentos</h3>
+                <p style="margin-bottom: 20px;">Configurar segmentos es muy simple si sigues este orden:</p>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="background: var(--primary-color); color: #000; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; margin-top: 3px;">1</span>
+                        <p>Ve a la pestaña **Segments** en la interfaz principal de WLED.</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="background: var(--primary-color); color: #000; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; margin-top: 3px;">2</span>
+                        <p>Edita el **Segmento 0**. Define dónde empieza (ej: 0) y dónde termina (ej: 150). Haz click en la tilde (Check) para guardar.</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="background: var(--primary-color); color: #000; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; margin-top: 3px;">3</span>
+                        <p>Haz click en **+ Add Segment** para crear el siguiente. Define el inicio (ej: 150) y el final (ej: 300).</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="background: var(--primary-color); color: #000; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; margin-top: 3px;">4</span>
+                        <p>¡Listo! Ahora verás dos rectángulos. **Selecciona uno** (verás que se resalta) y ve a la pestaña de **Effects**. El efecto que elijas se aplicará solo a esa parte de la tira.</p>
+                    </div>
+                </div>
+                <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <p style="font-size: 0.9rem; font-style: italic; color: var(--accent-color);">**Importante:** No olvides guardar esta configuración como un **Preset** (Punto 2 de arriba), de lo contrario, al apagar y encender el controlador, los segmentos podrían borrarse.</p>
+                </div>
             </div>
 
-
-            <h2 style="color: var(--accent-color); margin: 50px 0 20px;">Controladores Ethernet (RJ45): Estabilidad Pro</h2>
             <p>Para instalaciones grandes o profesionales (como salones de eventos o fachadas), el WiFi puede quedarse corto. Aquí es donde entran los controladores con puerto **RJ45 (Ethernet)**.</p>
             
             <div style="background: rgba(255, 165, 0, 0.1); padding: 25px; border-radius: 15px; border-left: 5px solid #ffa500; margin: 30px 0;">
