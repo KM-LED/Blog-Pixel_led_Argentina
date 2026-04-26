@@ -40,9 +40,49 @@
             <h2 style="color: var(--primary-color); margin: 40px 0 20px;">4. WS2815: El Estándar de 12V con Redundancia</h2>
             <p>Este es uno de los mejores chips disponibles en el mercado argentino. Funciona directamente a **12V**, lo que reduce drásticamente la caída de tensión. Su gran ventaja es el **doble canal de datos**: si un LED se daña físicamente, el pulso de datos salta al siguiente y el resto de la tira sigue funcionando normalmente.</p>
 
-            <div style="background: rgba(255, 0, 102, 0.05); border-left: 4px solid var(--accent-color); padding: 20px; border-radius: 0 15px 15px 0; margin-top: 20px;">
-                <h4 style="color: var(--accent-color); margin-bottom: 10px;">💡 Tip de Conexión (Backup Data):</h4>
-                <p style="font-size: 0.95rem;">En el **primer LED** de la tira, verás dos entradas de datos: **DI** (Data In) y **BI** (Backup In). Para que el sistema funcione correctamente y evitar ruidos, debes conectar el cable de datos de tu controlador al pin **DI**, y el pin **BI** debe ir conectado directamente a **GND** (Tierra). A partir de ahí, la tira gestiona la redundancia sola.</p>
+            <div style="background: rgba(0,0,0,0.4); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); margin: 30px 0; display: flex; flex-direction: column; align-items: center;">
+                <!-- SVG Esquemático WS2815 -->
+                <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 500px; width: 100%; height: auto;">
+                    <defs>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    
+                    <rect width="600" height="250" rx="15" fill="#0d1117" />
+                    
+                    <!-- Controlador -->
+                    <rect x="20" y="70" width="100" height="110" rx="5" fill="#1f242d" stroke="#333" stroke-width="2" />
+                    <text x="70" y="100" fill="#fff" font-family="Inter" font-size="12" text-anchor="middle" font-weight="bold">Controlador</text>
+                    <circle cx="120" cy="140" r="4" fill="#00a2ff" />
+                    <text x="110" y="135" fill="#00a2ff" font-family="monospace" font-size="10" text-anchor="end">DATA</text>
+                    
+                    <!-- Tira LED -->
+                    <rect x="250" y="50" width="300" height="150" rx="10" fill="#2a2e3a" stroke="#555" stroke-width="2" />
+                    <text x="400" y="40" fill="#aaa" font-family="Inter" font-size="14" text-anchor="middle">WS2815 (Primer LED)</text>
+                    
+                    <!-- Pins Tira -->
+                    <circle cx="250" cy="80" r="5" fill="#ff0000" /> <text x="265" y="85" fill="#ff0000" font-family="monospace" font-size="11">+12V</text>
+                    <circle cx="250" cy="110" r="5" fill="#00a2ff" /> <text x="265" y="115" fill="#00a2ff" font-family="monospace" font-size="11">DI (Data)</text>
+                    <circle cx="250" cy="140" r="5" fill="#4dff88" /> <text x="265" y="145" fill="#4dff88" font-family="monospace" font-size="11">BI (Backup)</text>
+                    <circle cx="250" cy="170" r="5" fill="#fff" /> <text x="265" y="175" fill="#fff" font-family="monospace" font-size="11">GND</text>
+                    
+                    <!-- Cables -->
+                    <!-- Data a DI -->
+                    <path d="M120 140 L 180 140 L 180 110 L 250 110" fill="none" stroke="#00a2ff" stroke-width="3" filter="url(#glow)" />
+                    
+                    <!-- BI a GND (Puentazo) -->
+                    <path d="M250 140 L 210 140 L 210 170 L 250 170" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="5,3" opacity="0.8" />
+                    
+                    <!-- Anotaciones -->
+                    <text x="150" y="220" fill="#00a2ff" font-family="Inter" font-size="11" text-anchor="middle">Cable de Datos</text>
+                    <text x="350" y="220" fill="#4dff88" font-family="Inter" font-size="11" text-anchor="middle">BI unido a GND</text>
+                    
+                    <!-- Flecha BI a GND -->
+                    <path d="M200 130 L 200 180" fill="none" stroke="#4dff88" stroke-width="1" marker-end="url(#arrow)" />
+                </svg>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 15px; text-align: center;">**Esquema de Conexión WS2815**: Unir BI con GND en el primer píxel para estabilizar el canal de redundancia.</p>
             </div>
 
             <h2 style="color: var(--primary-color); margin: 40px 0 20px;">5. WS2814: La Potencia del 24V y RGBW</h2>
