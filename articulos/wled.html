@@ -309,6 +309,257 @@
             </div>
 
 
+            <!-- ============================================ -->
+            <!-- SECCIÓN: SOUND REACTIVE                    -->
+            <!-- ============================================ -->
+            <h2 style="color: #a855f7; margin: 60px 0 20px; display: flex; align-items: center; gap: 12px;">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                Sound Reactive: Tus LEDs al Ritmo de la Música
+            </h2>
+
+            <p>Una de las funciones más impresionantes que ofrece el ecosistema WLED es la capacidad de hacer que tus tiras de LED reaccionen en tiempo real al sonido del ambiente. Imagina un ecualizador visual gigante en la pared de tu local, o luces que pulsan al ritmo de la música en una fiesta. Eso es **Sound Reactive (SR)** y está integrado directamente en WLED.</p>
+
+            <!-- Info box: SR es parte del fork oficial -->
+            <div style="background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.35); padding: 25px; border-radius: 16px; margin: 30px 0;">
+                <h3 style="color: #c084fc; margin-bottom: 12px; font-size: 1.1rem;">📌 ¿Es una función separada?</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7;">Originalmente, Sound Reactive era un <em>fork</em> (versión modificada) independiente de WLED. A partir de WLED <strong>0.14 y versiones posteriores</strong>, el análisis de audio fue integrado oficialmente como un <strong>UserMod</strong> dentro del propio WLED. Esto significa que si instalás la versión más nueva desde <a href="https://install.wled.me" target="_blank" style="color: #a855f7;">install.wled.me</a>, ya tenés esta función disponible. Solo necesitás el hardware correcto.</p>
+            </div>
+
+            <h3 style="color: #fff; margin: 40px 0 20px; font-size: 1.3rem;">🎙️ Hardware Necesario: El Micrófono</h3>
+            <p>Para que WLED pueda "escuchar", necesitás conectarle un micrófono digital al ESP32. El más recomendado por la comunidad es el módulo <strong>INMP441</strong>, un micrófono digital <strong>I²S</strong> de alta calidad y bajo ruido.</p>
+
+            <!-- Comparación de micrófonos -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 25px 0 35px;">
+                <div style="background: rgba(168, 85, 247, 0.12); padding: 22px; border-radius: 14px; border: 1px solid rgba(168, 85, 247, 0.4);">
+                    <h4 style="color: #c084fc; margin-bottom: 10px; font-size: 1.05rem;">✅ INMP441 (Recomendado)</h4>
+                    <ul style="font-size: 0.9rem; list-style: none; padding: 0; line-height: 1.8;">
+                        <li>📡 Interfaz digital I²S</li>
+                        <li>🔇 Muy bajo nivel de ruido</li>
+                        <li>⚡ Funciona solo con ESP32</li>
+                        <li>🎯 Alta precisión para efectos</li>
+                        <li>💰 Económico (~$5 USD)</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); padding: 22px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #aaa; margin-bottom: 10px; font-size: 1.05rem;">⚠️ MAX9814 / KY-038 (Analógico)</h4>
+                    <ul style="font-size: 0.9rem; list-style: none; padding: 0; line-height: 1.8;">
+                        <li>📡 Interfaz analógica (ADC)</li>
+                        <li>🔊 Más susceptible al ruido</li>
+                        <li>✔️ Compatible ESP8266/ESP32</li>
+                        <li>⚙️ Menor precisión en efectos</li>
+                        <li>💰 Muy barato pero limitado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Diagrama de conexión I2S -->
+            <h3 style="color: #fff; margin: 40px 0 15px; font-size: 1.2rem;">🔌 Diagrama de Conexión: INMP441 → ESP32</h3>
+            <p style="margin-bottom: 20px;">La conexión del micrófono I²S usa solo 5 cables. El pin <strong>L/R</strong> del módulo siempre va conectado a <strong>GND</strong> para indicarle que usaremos el canal izquierdo del estéreo.</p>
+
+            <div style="background: rgba(0,0,0,0.5); padding: 30px; border-radius: 20px; border: 1px solid rgba(168, 85, 247, 0.25); margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
+                <svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" style="max-width: 520px; width: 100%; height: auto;">
+                    <defs>
+                        <filter id="srGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                        </filter>
+                        <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Fondo -->
+                    <rect width="560" height="280" rx="12" fill="#0d1117"/>
+
+                    <!-- ESP32 Board -->
+                    <rect x="30" y="40" width="130" height="200" rx="6" fill="#1a2332" stroke="#334155" stroke-width="2"/>
+                    <text x="95" y="66" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="600">ESP32</text>
+                    <rect x="40" y="72" width="110" height="2" fill="#334155"/>
+
+                    <!-- Pins ESP32 (lado derecho) -->
+                    <!-- GND -->
+                    <circle cx="160" cy="100" r="4" fill="#6b7280"/>
+                    <text x="155" y="96" fill="#6b7280" font-family="monospace" font-size="9" text-anchor="end">GND</text>
+                    <!-- GPIO 32 (WS / LRCK) -->
+                    <circle cx="160" cy="130" r="4" fill="#a855f7"/>
+                    <text x="155" y="126" fill="#a855f7" font-family="monospace" font-size="9" text-anchor="end">GPIO 32</text>
+                    <!-- GPIO 15 (SCK) -->
+                    <circle cx="160" cy="160" r="4" fill="#22d3ee"/>
+                    <text x="155" y="156" fill="#22d3ee" font-family="monospace" font-size="9" text-anchor="end">GPIO 15</text>
+                    <!-- GPIO 33 (SD) -->
+                    <circle cx="160" cy="190" r="4" fill="#4ade80"/>
+                    <text x="155" y="186" fill="#4ade80" font-family="monospace" font-size="9" text-anchor="end">GPIO 33</text>
+                    <!-- 3.3V -->
+                    <circle cx="160" cy="220" r="4" fill="#f59e0b"/>
+                    <text x="155" y="216" fill="#f59e0b" font-family="monospace" font-size="9" text-anchor="end">3.3V</text>
+
+                    <!-- INMP441 módulo -->
+                    <rect x="380" y="55" width="140" height="175" rx="6" fill="#1a2332" stroke="#4c1d95" stroke-width="2"/>
+                    <text x="450" y="78" fill="#c084fc" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-weight="700">INMP441</text>
+                    <rect x="390" y="84" width="120" height="2" fill="#4c1d95"/>
+                    <!-- Círculo micrófono -->
+                    <circle cx="450" cy="135" r="22" fill="#0f172a" stroke="#7c3aed" stroke-width="1.5"/>
+                    <circle cx="450" cy="135" r="12" fill="#1e1b4b" stroke="#a855f7" stroke-width="1"/>
+                    <circle cx="450" cy="135" r="4" fill="#a855f7" opacity="0.6"/>
+
+                    <!-- Pins INMP441 (lado izquierdo) -->
+                    <!-- GND -->
+                    <circle cx="380" cy="100" r="4" fill="#6b7280"/>
+                    <text x="385" y="96" fill="#6b7280" font-family="monospace" font-size="9">GND</text>
+                    <!-- WS / LRCK -->
+                    <circle cx="380" cy="125" r="4" fill="#a855f7"/>
+                    <text x="385" y="121" fill="#a855f7" font-family="monospace" font-size="9">WS</text>
+                    <!-- SCK -->
+                    <circle cx="380" cy="150" r="4" fill="#22d3ee"/>
+                    <text x="385" y="146" fill="#22d3ee" font-family="monospace" font-size="9">SCK</text>
+                    <!-- SD -->
+                    <circle cx="380" cy="175" r="4" fill="#4ade80"/>
+                    <text x="385" y="171" fill="#4ade80" font-family="monospace" font-size="9">SD</text>
+                    <!-- VDD -->
+                    <circle cx="380" cy="200" r="4" fill="#f59e0b"/>
+                    <text x="385" y="196" fill="#f59e0b" font-family="monospace" font-size="9">VDD</text>
+                    <!-- L/R -->
+                    <circle cx="380" cy="220" r="4" fill="#6b7280"/>
+                    <text x="385" y="216" fill="#6b7280" font-family="monospace" font-size="9">L/R → GND</text>
+
+                    <!-- Líneas de conexión -->
+                    <!-- GND → GND -->
+                    <path d="M160 100 L380 100" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="5,3" filter="url(#srGlow)"/>
+                    <!-- GPIO32 → WS -->
+                    <path d="M160 130 L270 130 L270 125 L380 125" fill="none" stroke="#a855f7" stroke-width="2.5" filter="url(#srGlow)"/>
+                    <!-- GPIO15 → SCK -->
+                    <path d="M160 160 L280 160 L280 150 L380 150" fill="none" stroke="#22d3ee" stroke-width="2.5" filter="url(#srGlow)"/>
+                    <!-- GPIO33 → SD -->
+                    <path d="M160 190 L290 190 L290 175 L380 175" fill="none" stroke="#4ade80" stroke-width="2.5" filter="url(#srGlow)"/>
+                    <!-- 3.3V → VDD -->
+                    <path d="M160 220 L300 220 L300 200 L380 200" fill="none" stroke="#f59e0b" stroke-width="2.5" filter="url(#srGlow)"/>
+
+                    <!-- Etiquetas de función -->
+                    <text x="270" y="122" fill="#a855f7" font-family="Inter" font-size="8" text-anchor="middle" opacity="0.8">LRCK</text>
+                    <text x="275" y="143" fill="#22d3ee" font-family="Inter" font-size="8" text-anchor="middle" opacity="0.8">CLOCK</text>
+                    <text x="280" y="165" fill="#4ade80" font-family="Inter" font-size="8" text-anchor="middle" opacity="0.8">DATOS</text>
+                    <text x="285" y="192" fill="#f59e0b" font-family="Inter" font-size="8" text-anchor="middle" opacity="0.8">3.3V</text>
+
+                    <!-- Nota L/R a GND -->
+                    <path d="M160 100 L160 245 L380 245 L380 220" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5"/>
+                    <text x="270" y="258" fill="#6b7280" font-family="Inter" font-size="9" text-anchor="middle">L/R → GND (canal izquierdo)</text>
+                </svg>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 18px; text-align: center; max-width: 400px;">Estos pines son los <strong>valores por defecto</strong> en WLED-SR. Podés cambiarlos en la configuración si tu placa los tiene ocupados.</p>
+            </div>
+
+            <!-- Tabla de pines -->
+            <div style="overflow-x: auto; margin: 25px 0;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="background: rgba(168, 85, 247, 0.2);">
+                            <th style="padding: 12px 16px; text-align: left; border-bottom: 2px solid rgba(168, 85, 247, 0.4); color: #c084fc;">INMP441</th>
+                            <th style="padding: 12px 16px; text-align: left; border-bottom: 2px solid rgba(168, 85, 247, 0.4); color: #c084fc;">ESP32</th>
+                            <th style="padding: 12px 16px; text-align: left; border-bottom: 2px solid rgba(168, 85, 247, 0.4); color: #c084fc;">Función</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 10px 16px; color: #f59e0b; font-weight: bold;">VDD</td>
+                            <td style="padding: 10px 16px;">3.3V</td>
+                            <td style="padding: 10px 16px; color: var(--text-muted);">Alimentación</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                            <td style="padding: 10px 16px; color: #6b7280; font-weight: bold;">GND</td>
+                            <td style="padding: 10px 16px;">GND</td>
+                            <td style="padding: 10px 16px; color: var(--text-muted);">Tierra</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 10px 16px; color: #a855f7; font-weight: bold;">WS (LRCK)</td>
+                            <td style="padding: 10px 16px;">GPIO 32</td>
+                            <td style="padding: 10px 16px; color: var(--text-muted);">Selección L/R canal</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                            <td style="padding: 10px 16px; color: #22d3ee; font-weight: bold;">SCK</td>
+                            <td style="padding: 10px 16px;">GPIO 15</td>
+                            <td style="padding: 10px 16px; color: var(--text-muted);">Reloj del bus I²S</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 10px 16px; color: #4ade80; font-weight: bold;">SD</td>
+                            <td style="padding: 10px 16px;">GPIO 33</td>
+                            <td style="padding: 10px 16px; color: var(--text-muted);">Datos de audio (serial)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 16px; color: #6b7280; font-weight: bold;">L/R</td>
+                            <td style="padding: 10px 16px;">GND</td>
+                            <td style="padding: 10px 16px; color: var(--text-muted);">Fijar en canal izquierdo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Configuración en WLED -->
+            <h3 style="color: #fff; margin: 45px 0 15px; font-size: 1.2rem;">⚙️ Cómo Activarlo en WLED</h3>
+            <div style="background: rgba(0,0,0,0.4); padding: 28px; border-radius: 16px; border: 1px solid rgba(168,85,247,0.2); margin-bottom: 25px;">
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="background: linear-gradient(135deg, #a855f7, #7c3aed); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.85rem;">1</span>
+                        <p>Entrá a la interfaz web de tu WLED y andá a <strong>Config → Audio</strong> (o <em>Usermod → AudioReactive</em> en versiones anteriores).</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="background: linear-gradient(135deg, #a855f7, #7c3aed); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.85rem;">2</span>
+                        <p>Seleccioná el tipo de micrófono. Para el INMP441 elegí <strong>I2S / Generic I2S</strong>. Para el MAX9814 o KY-038 elegí <strong>Analog / Generic (ADC)</strong>.</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="background: linear-gradient(135deg, #a855f7, #7c3aed); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.85rem;">3</span>
+                        <p>Verificá que los pines (<strong>I2S SD, I2S WS, I2S SCK</strong>) coincidan con tu cableado (por defecto: 33, 32, 15).</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="background: linear-gradient(135deg, #a855f7, #7c3aed); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.85rem;">4</span>
+                        <p>Guardá y reiniciá. Ahora en la pestaña de <strong>Effects</strong> vas a ver que los efectos marcados con 🎙️ o un ícono de nota musical son los que responden al sonido.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Efectos sound reactive -->
+            <h3 style="color: #fff; margin: 45px 0 15px; font-size: 1.2rem;">🎆 Efectos Sound Reactive más populares</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 35px;">
+                <div style="background: rgba(168,85,247,0.08); padding: 20px; border-radius: 12px; border: 1px solid rgba(168,85,247,0.25);">
+                    <p style="font-weight: bold; color: #c084fc; margin-bottom: 6px;">🌊 Ripple</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">Crea ondas que se expanden desde el centro con cada golpe de bajo. Ideal para música electrónica.</p>
+                </div>
+                <div style="background: rgba(34,211,238,0.08); padding: 20px; border-radius: 12px; border: 1px solid rgba(34,211,238,0.25);">
+                    <p style="font-weight: bold; color: #22d3ee; margin-bottom: 6px;">🎚️ GEQ (Graphic EQ)</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">Muestra un ecualizador gráfico de 16 bandas en tiempo real. El efecto más vistoso para barras de LEDs.</p>
+                </div>
+                <div style="background: rgba(74,222,128,0.08); padding: 20px; border-radius: 12px; border: 1px solid rgba(74,222,128,0.25);">
+                    <p style="font-weight: bold; color: #4ade80; margin-bottom: 6px;">⚡ Pixels</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">Puntos de colores que "saltan" al ritmo. Muy caótico y enérgico, perfecto para fiestas.</p>
+                </div>
+                <div style="background: rgba(245,158,11,0.08); padding: 20px; border-radius: 12px; border: 1px solid rgba(245,158,11,0.25);">
+                    <p style="font-weight: bold; color: #f59e0b; margin-bottom: 6px;">🔥 Gravimeter</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">Barras que suben con el volumen y caen lentamente por "gravedad". Un clásico de los VU-meters.</p>
+                </div>
+                <div style="background: rgba(239,68,68,0.08); padding: 20px; border-radius: 12px; border: 1px solid rgba(239,68,68,0.25);">
+                    <p style="font-weight: bold; color: #f87171; margin-bottom: 6px;">💥 Blurz</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">Destellos difuminados que explotan con cada beat. Muy efectivo con colores degradados.</p>
+                </div>
+                <div style="background: rgba(99,102,241,0.08); padding: 20px; border-radius: 12px; border: 1px solid rgba(99,102,241,0.25);">
+                    <p style="font-weight: bold; color: #818cf8; margin-bottom: 6px;">🌈 DJLight</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">Simula una barra de DJ con colores que cambian con frecuencias distintas. Muy pedido para boliches.</p>
+                </div>
+            </div>
+
+            <!-- Tips de calibración -->
+            <div style="background: rgba(168, 85, 247, 0.06); border-left: 5px solid #a855f7; padding: 22px 25px; border-radius: 0 14px 14px 0; margin-bottom: 40px;">
+                <h4 style="color: #c084fc; margin-bottom: 12px;">🎛️ Tips de Calibración</h4>
+                <ul style="font-size: 0.9rem; margin-left: 0; list-style: none; padding: 0; line-height: 2;">
+                    <li>🔊 <strong>Squelch:</strong> Ajusta el umbral mínimo de ruido para que los LEDs no se muevan con el ruido del ambiente. Subilo si tu entorno tiene mucho ruido de fondo.</li>
+                    <li>📈 <strong>Gain:</strong> Si los efectos se ven apagados, subí la ganancia. Si se saturan y siempre van al máximo, bajala.</li>
+                    <li>📍 <strong>Posición del micrófono:</strong> Para el GEQ, colocalo cerca de las bocinas para captar bien los agudos y medios. Para detectar bajos, puede estar más lejos.</li>
+                    <li>🔁 <strong>UDP Sound Sync:</strong> ¿Tenés varios ESP32? WLED permite que uno sea el "master" con el micrófono y transmita los datos de audio a todos los otros por WiFi. ¡Todos sincronizan sin necesitar micrófono propio!</li>
+                </ul>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- FIN SECCIÓN SOUND REACTIVE                 -->
+            <!-- ============================================ -->
+
             <h2 style="color: var(--accent-color); margin: 50px 0 20px;">Infraestructura WiFi: Consejos Pro</h2>
             <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
                 <h3 style="color: #fff; margin-bottom: 15px;">🚀 Logra una conexión infalible</h3>
