@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://km-led.github.io/Blog-Pixel_led_Argentina/sitemap.xml
