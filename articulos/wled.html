@@ -357,7 +357,7 @@
             <p style="margin-bottom: 20px;">La conexión del micrófono I²S usa solo 5 cables. El pin <strong>L/R</strong> del módulo siempre va conectado a <strong>GND</strong> para indicarle que usaremos el canal izquierdo del estéreo.</p>
 
             <div style="background: rgba(0,0,0,0.5); padding: 30px; border-radius: 20px; border: 1px solid rgba(168, 85, 247, 0.25); margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
-                <svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" style="max-width: 520px; width: 100%; height: auto;">
+                <svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" style="max-width: 520px; width: 100%; height: auto;">
                     <defs>
                         <filter id="srGlow" x="-20%" y="-20%" width="140%" height="140%">
                             <feGaussianBlur stdDeviation="2.5" result="blur"/>
@@ -370,7 +370,7 @@
                     </defs>
 
                     <!-- Fondo -->
-                    <rect width="560" height="280" rx="12" fill="#0d1117"/>
+                    <rect width="560" height="300" rx="12" fill="#0d1117"/>
 
                     <!-- ESP32 Board -->
                     <rect x="30" y="40" width="130" height="200" rx="6" fill="#1a2332" stroke="#334155" stroke-width="2"/>
@@ -432,8 +432,20 @@
                     <path d="M160 160 L280 160 L280 150 L380 150" fill="none" stroke="#22d3ee" stroke-width="2.5" filter="url(#srGlow)"/>
                     <!-- GPIO33 → SD -->
                     <path d="M160 190 L290 190 L290 175 L380 175" fill="none" stroke="#4ade80" stroke-width="2.5" filter="url(#srGlow)"/>
-                    <!-- 3.3V → VDD -->
-                    <path d="M160 220 L300 220 L300 200 L380 200" fill="none" stroke="#f59e0b" stroke-width="2.5" filter="url(#srGlow)"/>
+                    <!-- 3.3V → VDD (con capacitor de desacople 100nF) -->
+                    <!-- Segmento 1: desde ESP32 hasta el cap -->
+                    <path d="M160 220 L300 220 L300 200 L330 200" fill="none" stroke="#f59e0b" stroke-width="2.5" filter="url(#srGlow)"/>
+                    <!-- Símbolo capacitor cerámico: placa + -->
+                    <line x1="330" y1="192" x2="330" y2="208" stroke="#f59e0b" stroke-width="3"/>
+                    <!-- Placa - (ligeramente curva con path) -->
+                    <path d="M338 192 Q342 200 338 208" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+                    <!-- Segmento 2: desde el cap hasta VDD del INMP441 -->
+                    <path d="M338 200 L380 200" fill="none" stroke="#f59e0b" stroke-width="2.5" filter="url(#srGlow)"/>
+                    <!-- Pata GND del capacitor hacia el bus GND -->
+                    <path d="M334 208 L334 245" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.55"/>
+                    <!-- Etiqueta 100nF -->
+                    <text x="334" y="185" fill="#f59e0b" font-family="monospace" font-size="8" text-anchor="middle" font-weight="bold">100nF</text>
+                    <text x="334" y="176" fill="#f59e0b" font-family="monospace" font-size="7" text-anchor="middle" opacity="0.75">C bypass</text>
 
                     <!-- Etiquetas de función -->
                     <text x="270" y="122" fill="#a855f7" font-family="Inter" font-size="8" text-anchor="middle" opacity="0.8">LRCK</text>
@@ -442,10 +454,13 @@
                     <text x="285" y="192" fill="#f59e0b" font-family="Inter" font-size="8" text-anchor="middle" opacity="0.8">3.3V</text>
 
                     <!-- Nota L/R a GND -->
-                    <path d="M160 100 L160 245 L380 245 L380 220" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5"/>
-                    <text x="270" y="258" fill="#6b7280" font-family="Inter" font-size="9" text-anchor="middle">L/R → GND (canal izquierdo)</text>
+                    <path d="M160 100 L160 265 L380 265 L380 220" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5"/>
+                    <!-- Línea GND del cap se une al bus GND -->
+                    <path d="M334 245 L334 265" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.55"/>
+                    <circle cx="334" cy="265" r="2.5" fill="#f59e0b" opacity="0.7"/>
+                    <text x="270" y="280" fill="#6b7280" font-family="Inter" font-size="9" text-anchor="middle">L/R → GND (canal izquierdo)</text>
                 </svg>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 18px; text-align: center; max-width: 400px;">Estos pines son los <strong>valores por defecto</strong> en WLED-SR. Podés cambiarlos en la configuración si tu placa los tiene ocupados.</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 18px; text-align: center; max-width: 450px;">Estos pines son los <strong>valores por defecto</strong> en WLED-SR. Podés cambiarlos en la configuración si tu placa los tiene ocupados. El capacitor de <strong style="color: #f59e0b;">100nF</strong> en la línea de 3.3V filtra el ruido de la alimentación y mejora notablemente la calidad de la captura de audio.</p>
             </div>
 
             <!-- Tabla de pines -->
